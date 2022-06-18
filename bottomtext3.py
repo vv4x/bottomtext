@@ -2,7 +2,7 @@
 from PIL import Image, ImageFilter, ImageOps, ImageDraw, ImageFont
 from io import BytesIO
 
-rawtext = input('What bottomtext')
+rawtext = input('what bottomtext: ')
 path = 'kitty.png'
 
 text = rawtext.upper()
@@ -17,8 +17,8 @@ with Image.open(path) as img:
 
 font = ImageFont.truetype('impact.ttf', size = textsize)
 
-draw.text((width // 2, 0),text, font = font, fill = (0,0,0), align = 'center', anchor = 'mt', stroke_width = 5, stroke_fill = (255,255,255))
-draw.text((width // 2, height - textsize),'BOTTOMTEXT', font = font, fill = (0,0,0), align = 'center', anchor = 'mt', stroke_width = 5, stroke_fill = (255,255,255))
+draw.text((width // 2, height / 35),text, font = font, fill = (0,0,0), align = 'center', anchor = 'mt', stroke_width = 5, stroke_fill = (255,255,255))
+draw.text((width // 2, height - textsize ),'BOTTOM TEXT', font = font, fill = (0,0,0), align = 'center', anchor = 'mt', stroke_width = 5, stroke_fill = (255,255,255))
 
 image.save('bottomtext1.png')
 
